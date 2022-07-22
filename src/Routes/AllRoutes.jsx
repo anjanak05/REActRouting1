@@ -5,16 +5,19 @@ import About from './About';
 import Contact from './Contact';
 import User from './User';
 import UserPage from "./UserPage"
+import Login from './Login';
+import PrivateRoute from '../Component/PrivateRoute';
 
 const AllRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/Contact" element={<Contact />}></Route>
-        <Route path="/User" element={<User />}></Route>
-        <Route path="/User/:user_id" element={<UserPage/>}></Route>
+        <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>}></Route>
+        <Route path="/about" element={<PrivateRoute><About /></PrivateRoute>}></Route>
+        <Route path="/Contact" element={<PrivateRoute><Contact /></PrivateRoute>}></Route>
+        <Route path="/User" element={ <PrivateRoute><User /></PrivateRoute>}></Route>
+        <Route path="/User/:user_id" element={ <PrivateRoute><UserPage/></PrivateRoute>}></Route>
+        <Route path="/Login" element={ <Login/>}></Route>
       </Routes>
     </div>
   );
