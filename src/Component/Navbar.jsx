@@ -4,8 +4,7 @@ import {  NavLink } from 'react-router-dom';
 const links = [
   { to: '/', title: 'Home' },
   { to: '/About', title: 'About' },
-  { to: '/Contact', title: 'Contact' },
-  { to: '/User', title: 'User' },
+   { to: '/User', title: 'User' },
   { to: '/Login', title: 'Login' },
 ];
 const baseStyle = {

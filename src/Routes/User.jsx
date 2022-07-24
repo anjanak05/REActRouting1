@@ -1,16 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, Navigate, useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const User = () => {
   const [data, setData] = useState([]);
-  const [searchParam, setSearchParams] = useSearchParams()
-  const [page, setPage] = useState(Number(searchParam.get("page"))|| 1);
-  
+  const [searchParam, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState(Number(searchParam.get('page')) || 1);
 
   useEffect(() => {
     setSearchParams({
-      page
-    })
+      page,
+    });
     fetch(`https://reqres.in/api/users?page=${page}`)
       .then(res => res.json())
       .then(res => {
